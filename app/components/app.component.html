@@ -1,0 +1,41 @@
+<div>
+
+    <div class='container'>
+        <h2>Rating Component</h2>
+        <div class="panel panel-primary">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Surename</th>
+                            <th>Age</th>
+                            <th>Company</th>
+                            <th>Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="#item of items">
+                            <td>
+                                {{item.name}}
+                            </td>
+                            <td>
+                                {{item.surename}}
+                            </td>
+                            <td>
+                                {{item.age}}
+                            </td>
+                            <td>
+                                {{item.company}}
+                            </td>
+                            <td>
+                                <app-rating [rating]='item.rating' [itemId]='item.id' (ratingClick)='ratingComponetClick($event)'></app-rating>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <p *ngIf='ratingClicked'>The Item {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
+    </div>
+</div>
