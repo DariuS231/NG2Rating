@@ -15,3 +15,6 @@ npm install
 ```node
 npm start 
 ```
+## Live demo
+
+[Here](http://embed.plnkr.co/Qi6tEdIyaRoGgSj2z4M9/) is the live demo.
