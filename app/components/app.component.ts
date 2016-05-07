@@ -14,62 +14,41 @@ export class AppComponent {
     items: any[] = [
         {
             "id": 0,
-            "picture": "http://placehold.it/32x32",
-            "age": 32,
-            "rating": 1,
-            "name": "Dennis",
-            "surename": "Phillips",
-            "company": "PROFLEX",
-            "email": "undefined.undefined@proflex.io",
-            "phone": "+44 (819) 547-3581"
+            "rating": 3,
+            "contact": "Dennis Phillips",
+            "company": "PROFLEX"
         },
         {
             "id": 1,
-            "picture": "http://placehold.it/32x32",
-            "age": 33,
             "rating": 1,
-            "name": "Morgan",
-            "surename": "Mccarthy",
-            "company": "CENTREXIN",
-            "email": "undefined.undefined@centrexin.biz",
-            "phone": "+44 (917) 531-2202"
+            "contact": "Morgan Mccarthy",
+            "company": "CENTREXIN"
         },
         {
             "id": 2,
-            "picture": "http://placehold.it/32x32",
-            "age": 23,
             "rating": 2,
-            "name": "Brady",
-            "surename": "Craft",
-            "company": "JIMBIES",
-            "email": "undefined.undefined@jimbies.biz",
-            "phone": "+44 (910) 544-3491"
+            "contact": "Brady Craft",
+            "company": "JIMBIES"
         },
         {
             "id": 3,
-            "picture": "http://placehold.it/32x32",
-            "age": 34,
-            "rating": 1,
-            "name": "Alvarado",
-            "surename": "Roman",
-            "company": "TERRAGO",
-            "email": "undefined.undefined@terrago.ca",
-            "phone": "+44 (995) 557-2676"
+            "rating": 5,
+            "contact": "Alvarado Roman",
+            "company": "TERRAGO"
         },
         {
             "id": 4,
-            "picture": "http://placehold.it/32x32",
-            "age": 36,
             "rating": 4,
-            "name": "Clark",
-            "surename": "Daugherty",
-            "company": "ISOTRONIC",
-            "email": "undefined.undefined@isotronic.org",
-            "phone": "+44 (964) 456-2352"
+            "contact": "Clark Daugherty",
+            "company": "ISOTRONIC"
         }
     ];
     ratingComponetClick(clickObj: any): void {
+      var item = this.items.filter((item: any) => item.id === clickObj.itemId);
+      if(!!item && item.length === 1){
+        item[0].rating = clickObj.rating;
         this.ratingClicked = clickObj.rating;
         this.itemIdRatingClicked = clickObj.itemId;
+      }
     }
 }
