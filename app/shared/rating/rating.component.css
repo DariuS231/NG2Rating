@@ -1,18 +1,24 @@
-
+/***************************
+Pulls the stars container to the left
+***************************/
 .rating {
     float:left;
 }
-
+/***************************
+Hides the radio buttons
+***************************/
 .rating:not(:checked) > input {
     position:absolute;
     top:-9999px;
     clip:rect(0,0,0,0);
 }
-
+/***************************
+Default stars styles
+***************************/
 .rating:not(:checked) > label {
     float:right;
     width:1em;
-    padding:0 .1em;
+    padding:0.1em;
     overflow:hidden;
     white-space:nowrap;
     cursor:pointer;
@@ -20,22 +26,28 @@
     line-height:1.2;
     color:#ddd;
 }
-
+/***************************
+Adds the star symbol to the labels
+***************************/
 .rating:not(:checked) > label:before {
     content: '★ ';
 }
-
+/***************************
+Colour for the applied rating stars
+***************************/
 .rating > input:checked ~ label {
     color: #f70;
 }
-
+/***************************
+Colour for hovered stars when increasing the rating
+***************************/
 .rating:not(:checked) > label:hover,
 .rating:not(:checked) > label:hover ~ label {
     color: gold;
 }
-
-.rating > input:checked + label:hover,
-.rating > input:checked + label:hover ~ label,
+/***************************
+Colour for hovered stars when decreasing the rating
+***************************/
 .rating > input:checked ~ label:hover,
 .rating > input:checked ~ label:hover ~ label,
 .rating > label:hover ~ input:checked ~ label {
