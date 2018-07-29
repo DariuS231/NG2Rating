@@ -1,3 +1,4 @@
+<!--The content below is only a placeholder and can be replaced.-->
 <div>
   <div class='container'>
     <h2>Rating Component</h2>
@@ -13,24 +14,24 @@
             </tr>
           </thead>
           <tbody>
-            <tr *ngFor="#item of items">
+            <tr *ngFor="let item of items">
               <td>
                 {{item.company}}
               </td>
               <td>
-                {{item.contact}} 
+                {{item.contact}}
               </td>
               <td>
-                <app-rating [rating]='item.rating' [itemId]='item.id' (ratingClick)='ratingComponetClick($event)'></app-rating>
+                <app-rating [rating]='item.rating' [itemId]='item.id' (ratingClick)='ratingComponentClick($event)'></app-rating>
               </td>
               <td>
-                {{item.rating}}
+                {{item.rating}} Stars
               </td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <p *ngIf='ratingClicked'>The Item {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
+    <p *ngIf='ratingClicked'>The Company {{itemIdRatingClicked}} has been given {{ratingClicked}} stars</p>
   </div>
 </div>
